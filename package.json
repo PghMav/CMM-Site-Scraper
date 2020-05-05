@@ -21,15 +21,13 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scraper": "node apps/scraper/scraper.js --ignore 'apps/scraper/files/*'",
-    "excel": "nodemon utils/xlsx.js --ignore 'files/*'",
-    "poster": "nodemon apps/poster/poster.js",
-    "converted": "node apps/html-converter/mammoth.js",
-    "debug": "node inspect apps/scraper/scraper.js",
-    "screenshotter": "node apps/scraper/utils/screenshotter.js"
+    "scraper": "nodemon apps.js --ignore '/files/*'",
+    "html": "node utils/scrapeHtml.js",
+    "screenshotter": "node utils/screenshotter.js"
+
   },
   "keywords": [],
-  "author": "\\",
+  "author": "Bret Mavrich",
   "license": "ISC",
-  "description": ""
+  "description": "A script that can be configured to either scrape every page of a sitemap and write each page to an html file, or iterate over ever page in a sitemap and take a screen shot of the page."
 }

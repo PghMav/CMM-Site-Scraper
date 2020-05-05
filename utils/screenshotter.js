@@ -40,7 +40,7 @@ const screenShotter = (urlArray) =>{
     const urlPosition = urlArray.indexOf(url)
     const pathnameLength = pathname.length<2
 
-    const imageBox = !pathnameLength ? path.join(__dirname, `../pngs/${pathname}.png`) : path.join(__dirname, `../pngs/${host}-${urlPosition}.png`)
+    const imageBox =  path.join(__dirname, `../imgs/${ !pathnameLength ? pathname : href}.png`)
 
     console.log(imageBox)
 

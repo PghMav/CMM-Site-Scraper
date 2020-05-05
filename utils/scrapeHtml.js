@@ -9,8 +9,8 @@ const theUrl = require('url')
 const Stopwatch = require('statman-stopwatch');
 const stopwatch = new Stopwatch();
 
-
-// basicUrls = ['https://www.mrksquincy.com/sitemap.xml', 'https://www.mrksquincy.com/about', 'https://www.mrksquincy.com/blog']
+//
+// basicUrls = ['https://www.mrksquincy.com/', 'https://www.mrksquincy.com/about', 'https://www.mrksquincy.com/blog']
 
 const scrapeHtml =  (urlArray) =>{
 
@@ -29,7 +29,9 @@ const scrapeHtml =  (urlArray) =>{
        pathname
      } = theUrl.parse(url);
 
-     const htmlPath = path.join(__dirname, `/files/${pathname ? pathname : href}.html`)
+     const pathnameLength = pathname.length<2
+
+     const htmlPath = path.join(__dirname, `../files/${!pathnameLength ?  pathname : host}.html`)
 
     rp({
     uri: url
@@ -50,7 +52,7 @@ const scrapeHtml =  (urlArray) =>{
     })
     .catch(e=>{
      //console.log(chalk.bold.green(`It is Borken!`))
-     console.log(chalk.bold.underline.red(`Problem: ${chalk.yellow(url)}`))
+     console.log(chalk.bold.underline.red(`Problem: ${chalk.yellow(e)}`))
    })
     .finally(
       //console.log(`URL in review: ${url}`)
