@@ -1,0 +1,35 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "main": "scraper.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "chalk": "^3.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "electron": "^8.1.1",
+    "exceljs": "^3.8.1",
+    "lodash": "^4.17.15",
+    "mammoth": "^1.4.9",
+    "nightmare": "^3.0.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "statman-stopwatch": "^2.11.1",
+    "vo": "^4.0.2",
+    "xlsx": "^0.15.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scraper": "node apps/scraper/scraper.js --ignore 'apps/scraper/files/*'",
+    "excel": "nodemon utils/xlsx.js --ignore 'files/*'",
+    "poster": "nodemon apps/poster/poster.js",
+    "converted": "node apps/html-converter/mammoth.js",
+    "debug": "node inspect apps/scraper/scraper.js",
+    "screenshotter": "node apps/scraper/utils/screenshotter.js"
+  },
+  "keywords": [],
+  "author": "\\",
+  "license": "ISC",
+  "description": ""
+}
