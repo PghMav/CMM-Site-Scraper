@@ -23,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "scraper": "nodemon apps.js --ignore '/files/*'",
     "html": "node utils/scrapeHtml.js",
-    "screenshotter": "node utils/screenshotter.js"
+    "screenshotter": "nodemon utils/screenshotter.js"
 
   },
   "keywords": [],

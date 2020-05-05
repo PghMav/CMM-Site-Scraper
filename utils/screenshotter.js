@@ -8,10 +8,10 @@ const _ = require('lodash')
 const Stopwatch = require('statman-stopwatch');
 const stopwatch = new Stopwatch();
 
-// basicUrls = [
-//   'https://www.mrksquincy.com',
-//   'https://www.mrksquincy.com/about',
-//   'https://www.mrksquincy.com/blog']
+basicUrls = [
+  'https://www.mrksquincy.com',
+  'https://www.mrksquincy.com/about',
+  'https://www.mrksquincy.com/blog']
 
 // basicUrls = ['https://www.mrksquincy.com/about', 'https://www.mrksquincy.com/blog']
 
@@ -40,7 +40,7 @@ const screenShotter = (urlArray) =>{
     const urlPosition = urlArray.indexOf(url)
     const pathnameLength = pathname.length<2
 
-    const imageBox =  path.join(__dirname, `../imgs/${ !pathnameLength ? pathname : href}.png`)
+    const imageBox =  path.join(__dirname, `../imgs/${!pathnameLength ? pathname : host}.png`)
 
     console.log(imageBox)
 
@@ -128,6 +128,6 @@ const screenShotter = (urlArray) =>{
 
 }
 
-// screenShotter(basicUrls)
-
-module.exports = screenShotter
+screenShotter(basicUrls)
+//
+// module.exports = screenShotter
