@@ -4,14 +4,16 @@ const rp = require('request-promise');
 const fs = require('fs')
 const _ = require('lodash')
 const url = require('url')
+const yargs = require('yargs')
 
-const scrapeHtml = require('./utils/scrapeHtml.js')
-// const screenShotter = require('./utils/screenshotter.js')
+const theArgs = yargs.parse()
 
-const xml = 'https://www.mrksquincy.com/sitemap.xml'
-console.log(xml)
+//console.log(theArgs.url)
 
+const xml = theArgs.url
+// console.log(xml)
 
+//
 if(!xml){
   console.log(`please supply a valid sitemap for the first argument, and a valid spreadsheet name for the second argument.`)
   process.exit(0)
@@ -19,7 +21,7 @@ if(!xml){
 
 // const writeStream = fs.createWriteStream('./apps/scraper/files/data.txt')
 
-const options = {
+const mobileOptions = {
   uri: xml,
   headers: {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1'
@@ -52,9 +54,24 @@ const scraper = rp(xml)
                     })
                 .then( urlArray=>{
 
+                  switch(theArgs.type){
+                    case 'HTML':
+                    const scrapeHtml = require('./utils/scrapeHtml.js')
                     scrapeHtml(urlArray)
-                   //screenShotter(urlArray)
-
+                    return
+                    case 'SCREENSHOT':
+                    const screenShotter = require('./utils/screenshotter.js')
+                    screenShotter(urlArray)
+                    return
+                    case 'BOTH':
+                    const scrapeHtml = require('./utils/scrapeHtml.js')
+                    scrapeHtml(urlArray)
+                    const screenShotter = require('./utils/screenshotter.js')
+                    screenShotter(urlArray)
+                    return
+                    default:
+                    throw new Error(`Enter valid type`)
+                  }
                 })
                 .catch(e=>{
                         console.log(chalk.bold.red(`BORKEN BIG TIME:`), e)

@@ -16,7 +16,8 @@
     "request-promise": "^4.2.5",
     "statman-stopwatch": "^2.11.1",
     "vo": "^4.0.2",
-    "xlsx": "^0.15.5"
+    "xlsx": "^0.15.5",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -24,7 +25,6 @@
     "scraper": "nodemon apps.js --ignore '/files/*'",
     "html": "node utils/scrapeHtml.js",
     "screenshotter": "nodemon utils/screenshotter.js"
-
   },
   "keywords": [],
   "author": "Bret Mavrich",
