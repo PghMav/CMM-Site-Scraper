@@ -8,23 +8,12 @@ const _ = require('lodash')
 const Stopwatch = require('statman-stopwatch');
 const stopwatch = new Stopwatch();
 
-// basicUrls = [
-//   'https://www.mrksquincy.com',
-//   'https://www.mrksquincy.com/about',
-//   'https://www.mrksquincy.com/blog']
 
-// basicUrls = ['https://www.mrksquincy.com/about', 'https://www.mrksquincy.com/blog']
 
 const screenShotter = (urlArray) =>{
   stopwatch.start()
   let resourceCount = 0
   console.log(`screen shotter is working...`)
-
-  // const asyncForEach = async (array, callback)=> {
-  // for (let index = 0; index < array.length; index++) {
-  //   await callback(array[index], index, array);
-  // }
-  // }
 
   function * run(url) {
 
@@ -86,17 +75,13 @@ const screenShotter = (urlArray) =>{
       yield nightmare.end();
   }
 
-  // urlArray.forEach(url=>{
-  //
-  //
-  // })
 
   async function asyncForEach(array, callback) {
   for (let index = 0; index < array.length; index++) {
     await callback(array[index], index, array);
       }
     }
-  //
+
   asyncForEach(urlArray, async (url, urlIndex, arrayFull)=>{
 
 
@@ -128,6 +113,10 @@ const screenShotter = (urlArray) =>{
 
 }
 
+// basicUrls = [
+//   'https://www.mrksquincy.com',
+//   'https://www.mrksquincy.com/about',
+//   'https://www.mrksquincy.com/blog']
 // screenShotter(basicUrls)
-//
+
 module.exports = screenShotter

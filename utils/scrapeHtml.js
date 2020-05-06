@@ -9,9 +9,6 @@ const theUrl = require('url')
 const Stopwatch = require('statman-stopwatch');
 const stopwatch = new Stopwatch();
 
-//
-// basicUrls = ['https://www.mrksquincy.com/', 'https://www.mrksquincy.com/about', 'https://www.mrksquincy.com/blog']
-
 const scrapeHtml =  (urlArray) =>{
 
     stopwatch.start()
@@ -40,7 +37,6 @@ const scrapeHtml =  (urlArray) =>{
 
             fs.writeFileSync(htmlPath, html)
 
-            // console.log(chalk.bold.cyan(html))
             stopwatch.split()
             const theSplitTime = stopwatch.splitTime()/1000
             stopwatch.unsplit()
@@ -51,15 +47,9 @@ const scrapeHtml =  (urlArray) =>{
 
     })
     .catch(e=>{
-     //console.log(chalk.bold.green(`It is Borken!`))
+
      console.log(chalk.bold.underline.red(`Problem: ${chalk.yellow(e)}`))
    })
-    .finally(
-      //console.log(`URL in review: ${url}`)
-
-      console.log(`Another one done.`)
-
-    )
 
 
 })
@@ -82,6 +72,10 @@ process.on('exit', ()=>{
   });
 }
 
+// basicUrls = [
+//   'https://www.mrksquincy.com',
+//   'https://www.mrksquincy.com/about',
+//   'https://www.mrksquincy.com/blog']
 // scrapeHtml(basicUrls)
 
 module.exports = scrapeHtml

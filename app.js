@@ -8,18 +8,13 @@ const yargs = require('yargs')
 
 const theArgs = yargs.parse()
 
-//console.log(theArgs.url)
-
 const xml = theArgs.url
-// console.log(xml)
 
-//
+
 if(!xml){
   console.log(`please supply a valid sitemap for the first argument, and a valid spreadsheet name for the second argument.`)
   process.exit(0)
 }
-
-// const writeStream = fs.createWriteStream('./apps/scraper/files/data.txt')
 
 const mobileOptions = {
   uri: xml,
