@@ -4,7 +4,7 @@ run the file apps.js from the command line with two flags:
 
 ### url
 
-the url flag takes a simple .xml string. If it is not an xml string, it will throw an error.
+the url flag takes a simple .xml string. If it is not a string ending in .xml, it will throw an error.
 
 ### type
 

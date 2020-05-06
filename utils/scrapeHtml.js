@@ -16,7 +16,6 @@ const scrapeHtml =  (urlArray) =>{
 
      urlArray.forEach( url=>{
 
-
       const {
        protocol,
        slashes,
