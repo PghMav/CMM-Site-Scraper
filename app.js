@@ -58,12 +58,12 @@ const scraper = rp(xml)
                     const screenShotter = require('./utils/screenshotter.js')
                     screenShotter(urlArray)
                     return
-                    case 'BOTH':
-                    const scrapeHtml = require('./utils/scrapeHtml.js')
-                    scrapeHtml(urlArray)
-                    const screenShotter = require('./utils/screenshotter.js')
-                    screenShotter(urlArray)
-                    return
+                    // case 'BOTH':
+                    // const scrapeHtml = require('./utils/scrapeHtml.js')
+                    // scrapeHtml(urlArray)
+                    // const screenShotter = require('./utils/screenshotter.js')
+                    // screenShotter(urlArray)
+                    // return
                     default:
                     throw new Error(`Enter valid type`)
                   }
