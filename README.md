@@ -1,6 +1,13 @@
 # CMM-Site-Scraper
 
-run the file apps.js from the command line with two flags:
+The app iterates over pages in a sitemap and either
+- copies the html from the page and makes a new .html file with the contents
+- takes a full screenshot of the page
+- or both
+
+The newly created .html files are added to the "files" folder, and images are added to the "imgs" folder.
+
+Run the file apps.js from the command line with two flags:
 
 ### url
 
