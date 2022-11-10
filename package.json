@@ -7,7 +7,7 @@
     "bluebird": "^3.7.2",
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.3",
-    "electron": "^8.1.1",
+    "electron": "^18.3.7",
     "lodash": "^4.17.15",
     "nightmare": "^3.0.2",
     "request": "^2.88.2",
